@@ -13,7 +13,7 @@ body{
   margin: 0;
   font-family: "poppins", sans-serif;
   background-color: var(--red);
-  background-image: url(/images/bg-intro-desktop.png);
+  background-image: url(./assets/bg-intro-desktop.png);
 }
 main{
   margin-inline: auto;
@@ -105,6 +105,9 @@ form input[data-valid="false"]{
 @media screen and (max-width: 50em){
   :root{
     --padx: 2rem;
+  }
+  body{
+    background-image: url(./assets/bg-intro-mobile.png);
   }
   main{
     flex-direction: column;
