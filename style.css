@@ -5,9 +5,9 @@
 --dark-grayish: hsl(249, 10%, 26%); 
 --grayish-blue: hsl(246, 25%, 77%);
 font-size: 62.5%;
---padx: 10rem;
---heading: clamp(3.2rem, 7vw + 1rem, 7.2rem);
---body: clamp(1.8rem, 1vw + 1rem, 2.4rem);
+--padx: 4rem;
+--heading: clamp(3.2rem, 7vw + 1rem, 4.9rem);
+--body: clamp(1.4rem, 1vw + 1rem, 1.6rem);
 }
 body{
   margin: 0;
@@ -17,51 +17,53 @@ body{
 }
 main{
   margin-inline: auto;
-  max-width: 144em;
+  max-width: 119em;
   min-height: 100vh;
-  padding: 10rem var(--padx);
+  padding: 8rem var(--padx);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   column-gap: 4em;
   box-sizing: border-box;
 }
 .hero {
-  flex: 1;
   color: white;
 }
 .hero h1{
   max-width: 15ch;
   font-size: var(--heading);
-  line-height: 100%;
-  margin: 0;
+  line-height: 110%;
+  margin: 0 0 3rem;
 }
 .hero p{
+  line-height: 160%;
   max-width: 50ch;
   font-size: var(--body);
 }
 .signup_form{
-  width: clamp(28em, 50%, 55em);
+  width: clamp(33em, 60%, 54em);
 }
 .signup_form > p{
-  padding: 1.8rem 1rem;
+  margin-top: 0;
+  padding: 2rem 3rem;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: var(--body);
   background-color: var(--blue);
- margin-bottom: 1.6rem;
- color: white;
+  margin-bottom: 2.4rem;
+  color: white;
 }
 :is(form, form input, form button, .signup_form > p){
-  border-radius: 1rem;
+  border-radius: .7rem;
 }
 form{
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
   background-color: white;
-  padding: 4rem 3rem;
+  padding: 4rem;
 }
 form :is(input, button){
-  height: 5rem;
+  height: 5.1rem;
   padding: 0 1rem;
   border: 1px solid var(--grayish-blue);
   font-weight: bold;
@@ -71,6 +73,8 @@ form :is(input, button){
   background-color: var(--green);
   border: none;
   cursor: pointer;
+  font-size: 1.6rem;
+  text-transform: uppercase;
 }
 .submit:hover{
   background-color: hsl(154, 59%, 40%);
@@ -98,7 +102,7 @@ form input[data-valid="false"]{
   color: var(--red);
   cursor: pointer;
 }
-@media screen and (max-width: 64em){
+@media screen and (max-width: 50em){
   :root{
     --padx: 2rem;
   }
@@ -111,5 +115,8 @@ form input[data-valid="false"]{
     display: flex;
     flex-direction: column;
     align-items: center
+  }
+  form{
+    padding: 3rem;
   }
 }

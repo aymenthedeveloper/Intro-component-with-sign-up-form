@@ -3,6 +3,19 @@ const p = document.getElementById('password');
 const inputs = document.querySelectorAll('form input');
 const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
 
+
+
+for (var i = 0; i < inputs.length; i++) {
+  const el = inputs[i];
+  el.addEventListener('input', function(event) {
+    if (el.value == ''){
+    el.dataset.valid = 'false';
+  } else {
+    el.dataset.valid = 'true';
+  }
+  })}
+
+  
 e.addEventListener('input', function(event) {
   if (e.value.match(emailRegex) == null) {
     e.dataset.valid = 'false';
@@ -19,12 +32,3 @@ p.addEventListener('input', function(event) {
   }
 })
 
-for (var i = 0; i < inputs.length; i++) {
-  const el = inputs[i];
-  el.addEventListener('input', function(event) {
-    if (el.value == ''){
-    el.dataset.valid = 'false';
-  } else {
-    el.dataset.valid = 'true';
-  }
-  })}
