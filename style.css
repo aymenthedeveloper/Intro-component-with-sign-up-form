@@ -1,0 +1,115 @@
+:root{
+--red: hsl(0, 100%, 74%);
+--green: hsl(154, 59%, 45%);
+--blue: hsl(248, 32%, 49%);
+--dark-grayish: hsl(249, 10%, 26%); 
+--grayish-blue: hsl(246, 25%, 77%);
+font-size: 62.5%;
+--padx: 10rem;
+--heading: clamp(3.2rem, 7vw + 1rem, 7.2rem);
+--body: clamp(1.8rem, 1vw + 1rem, 2.4rem);
+}
+body{
+  margin: 0;
+  font-family: "poppins", sans-serif;
+  background-color: var(--red);
+  background-image: url(/images/bg-intro-desktop.png);
+}
+main{
+  margin-inline: auto;
+  max-width: 144em;
+  min-height: 100vh;
+  padding: 10rem var(--padx);
+  display: flex;
+  align-items: center;
+  column-gap: 4em;
+  box-sizing: border-box;
+}
+.hero {
+  flex: 1;
+  color: white;
+}
+.hero h1{
+  max-width: 15ch;
+  font-size: var(--heading);
+  line-height: 100%;
+  margin: 0;
+}
+.hero p{
+  max-width: 50ch;
+  font-size: var(--body);
+}
+.signup_form{
+  width: clamp(28em, 50%, 55em);
+}
+.signup_form > p{
+  padding: 1.8rem 1rem;
+  text-align: center;
+  font-size: 1.6rem;
+  background-color: var(--blue);
+ margin-bottom: 1.6rem;
+ color: white;
+}
+:is(form, form input, form button, .signup_form > p){
+  border-radius: 1rem;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  background-color: white;
+  padding: 4rem 3rem;
+}
+form :is(input, button){
+  height: 5rem;
+  padding: 0 1rem;
+  border: 1px solid var(--grayish-blue);
+  font-weight: bold;
+}
+.submit{
+  color: white;
+  background-color: var(--green);
+  border: none;
+  cursor: pointer;
+}
+.submit:hover{
+  background-color: hsl(154, 59%, 40%);
+}
+.submit:active{
+  background-color: hsl(154, 59%, 50%);
+}
+form input:focus{
+  outline: none;
+}
+form input[data-valid="true"]{
+  border-color: var(--green);
+}
+form input[data-valid="false"]{
+  border-color: red;
+}
+.terms{
+  color: var(--grayish-blue);
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0;
+}
+.terms span{
+  font-weight: bold;
+  color: var(--red);
+  cursor: pointer;
+}
+@media screen and (max-width: 64em){
+  :root{
+    --padx: 2rem;
+  }
+  main{
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero {
+    flex: revert;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+  }
+}
